@@ -1,0 +1,18 @@
+<h1>Page événement</h1>
+
+<%= link_to @event.creator.name, user_path(@creator) %>
+
+<%= @event.description %>
+<%= @event.date %>
+<%= @event.place %>
+
+<% if @event.attendees.empty? == false %>
+<p>Participants à l'événement :</p>
+  <% @event.attendees.each do |attendee| %>
+    <%= attendee.name %>
+    <% end %>
+<% end %> 
+
+<%= form_for(:event, url: suscribe_event_path(@event)) do |f| %>
+  <%= f.submit "Rejoindre l'événement" %>
+<% end %>

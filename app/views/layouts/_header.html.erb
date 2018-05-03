@@ -1,0 +1,16 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "Eventbrite Like", root_path %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <% if logged_in? %>
+              <li><%= link_to "Liste des événements", events_path %></li>
+              <li><%= link_to "Mon profil", current_user %></li>
+            <% else %>
+              <li><%= link_to "Liste des événements", events_path %></li>
+              <li><%= link_to "Se connecter", login_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </header>

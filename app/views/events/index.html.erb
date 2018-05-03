@@ -1,0 +1,12 @@
+<h1>Index des événements</h1>
+
+  <table>
+	<% @events.each do |event| %>
+    <tr>
+        <td><%= event.description %></td>	
+        <td><%= event.date %></td>
+        <td><%= event.place %></td>
+        <td><%= link_to "Consulter la fiche de l'événement", event_path(event) %></td>
+    </tr>
+    <% end %>
+  </table>

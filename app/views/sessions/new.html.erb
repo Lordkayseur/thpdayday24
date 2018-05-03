@@ -1,0 +1,14 @@
+<h1>Se connecter</h1>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label "Nom" %>
+      <%= f.text_field :name %>
+
+      <%= f.label "Password" %>
+      <%= f.password_field :password %>  
+
+      <%= f.submit "Connexion", class: "btn btn-lg btn-primary" %>
+    <% end %>
+
+    <%= link_to "Créer un profil", new_user_path %>

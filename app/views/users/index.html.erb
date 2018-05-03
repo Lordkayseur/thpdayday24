@@ -1,0 +1,12 @@
+<h1>Index des Utilisateurs</h1>
+
+<table>
+
+	<% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>	
+      <td><%= user.name %></td>
+      <% end %>
+    </tr>
+</table>
+

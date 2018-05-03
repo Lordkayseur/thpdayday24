@@ -1,0 +1,25 @@
+<h1>Nouvel Evénement</h1>
+
+	<% if @event.invalid? %>
+	  <div class="alert alert-danger">
+	  	<ul>
+		  <% @event.errors.full_messages.each do |message| %>
+		  <li><%= message %></li>
+		  <% end %>
+		</ul>
+	  </div>
+	<% end %>
+
+    <%= form_for @event, url: {controller: "events", action: "create"}, html: {class: "nifty-form"} do |f| %>
+
+      <%= f.label "Description" %>
+      <%= f.text_field :description %>
+
+      <%= f.label "Date" %>
+      <%= f.date_field :date %>
+
+      <%= f.label "Lieu" %>
+      <%= f.text_field :place %>      
+
+      <%= f.submit "Créer l'événement", class: "btn btn-lg btn-primary" %>
+    <% end %>
